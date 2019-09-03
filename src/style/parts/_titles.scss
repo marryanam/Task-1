@@ -1,0 +1,27 @@
+.title {
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 3.4px;
+    text-align: center;
+    color: $black;
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 2s ease;
+    transform:translateY(-20px);
+    &.in-view{
+        transform:translateY(0);
+    }
+    span {
+        &:last-child {
+            &:before {
+                background-color: #ff99bb;
+            }
+            &:after {
+                background-color: #ace673;
+            }
+        }
+    }
+}

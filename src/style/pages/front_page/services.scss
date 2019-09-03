@@ -1,0 +1,129 @@
+.services {
+    padding: 150px 0 50px;
+    position: relative;
+    @include breakpoint(lg) {
+        padding: 50px 0;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: -270px;
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 460px;
+        background-image: url(../img/clouds.png);
+        background-size: cover;
+        background-position: center bottom;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -250px;
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 360px;
+        background-image: url(../img/clouds-2.png);
+        background-size: cover;
+        background-position: center bottom;
+    }
+    &__cover {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 0;
+        position: relative;
+        z-index: 2;
+    }
+    &__item {
+        width: 255px;
+        margin: 30px;
+        height: 300px;
+        box-shadow: 0px -15px 40px 0 rgba(102,191,255,0.15);
+        background-color: $pink;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        border: solid 1px #e3f3fc;
+        &:after {
+            content: '';
+            width: 100px;
+            position: absolute;
+            bottom: 0;
+            background: $blueLight;
+            left: 50%;
+            width: 60px;
+            height: 1px;
+            transform: translateX(-50%);
+        }
+        &:hover {
+            box-shadow: 0 20px 40px 0 rgba(102,191,255,0.25);
+            &:after {
+                opacity: 0;
+            }
+            .services__description {
+                height: 80px;
+            }
+            .services__block {
+                &:before {
+                    top: -10px;
+                    color: $pink;
+                }
+            }
+            .services__img {
+                opacity: 0.8;
+            }
+        }
+    }
+    &__img {
+        max-width: 100%;
+        transition: all 0.5s ease;
+    }
+    &__block {
+        padding: 20px 40px 10px;
+        position: absolute;
+        bottom: 0;
+        background: #fff;
+        transition: all 0.5s ease;
+        min-height: 40px;
+        @include breakpoint(sm) {
+            padding: 20px 20px 10px;
+        }
+        @include breakpoint(xs) {
+            min-height: 60px;
+            padding: 20px 10px 10px;
+        }
+        &:before {
+            content: '\f111';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            box-shadow: 0px -15px 40px 0 rgba(102,191,255,0.15);
+            background-color: #fff;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 7px;
+            text-align: center;
+            line-height: 22px;
+            color: $blueLight;
+        }
+    }
+    &__title {
+        font-weight: 500;
+        line-height: 1.63;
+        text-align: center;
+    }
+    &__description {
+        line-height: 1.57;
+        text-align: center;
+        color: $gray;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+    }
+}

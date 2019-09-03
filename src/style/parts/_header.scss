@@ -1,0 +1,367 @@
+
+/*---------------------------------    general    -------------------------------*/
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    scroll-behavior: smooth;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+}
+html {
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    font-family: "GothamPro",serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: $black;
+    overflow-x: hidden;
+    line-height: 1;
+    display: none;
+    z-index: 2;
+    @include breakpoint(md) {
+        font-size: 12px;
+    }
+}
+section {
+    position: relative;
+}
+#wrap {
+    position: fixed;
+}
+a {
+    text-decoration: none;
+    transition: all 0.5s ease;
+    color: $gray;
+    &:hover {
+        color: $blue;
+    }
+}
+
+/*---------------------------------    header    -------------------------------*/
+
+.header {
+    position: fixed;
+    width: calc(100% - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    box-shadow: 0px 10px 30px 0 rgba(102,191,255,0.1);
+    z-index: 5;
+    background: white;
+    transition: all 1s ease;
+    @media(max-width:1366px) {
+        width: calc(100% - 50px);
+        padding: 0 25px;
+    }
+    @include breakpoint(md) {
+        padding: 0 10px;
+        width: calc(100% - 20px);
+        position: relative;
+    }
+    &__info {
+        display: flex;
+        transition: all 1s ease;
+        .dropdown {
+            padding: 0 50px;
+            @media(max-width:1366px) {
+                padding: 0 0 0 50px;
+            }
+            @include breakpoint(sm) {
+                padding: 0 0 0 30px;
+            }
+        }
+    }
+    &__block {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @media(max-width: 760px){
+          display: none;
+        }
+    }
+    .btn-2{
+        @media(max-width: 1366px){
+            margin-left: 25px;
+        }
+    }
+}
+
+/*---------------------------------    logo    -------------------------------*/
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 7;
+    padding: 20px 0;
+    background: #fff;
+    @include breakpoint(md) {
+        padding: 10px 0;
+    }
+    &__icon {
+        position: relative;
+        width: 7px;
+        height: 7px;
+        background-color: #ffc859;
+        border-radius: 100%;
+        margin-right: 10px;
+        &:before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: $pink;
+            border-radius: 100%;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+        &:after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: $green;
+            border-radius: 100%;
+            position: absolute;
+            bottom: -5px;
+            right: -8px;
+        }
+    }
+    &__name {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 0.71;
+        letter-spacing: 2.8px;
+        color: $black;
+        padding: 0 10px;
+    }
+    &__subname {
+        font-weight: 300;
+        line-height: 1.43;
+        color: $grayLight;
+    }
+}
+
+/*---------------------------------    adress    -------------------------------*/
+ 
+.adress {
+    position: relative;
+    padding-right: 25px;
+    transition: all 1s ease;
+    @media(max-width:1366px) {
+        padding-right: 0;
+    }
+    @include breakpoint(md) {
+        display: none;
+    }
+    &:before {
+        content: '\f3c5';
+        position: absolute;
+        left: -20px;
+        top: 0;
+        font-size: 16px;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: $blueLight;
+         @include breakpoint(md) {
+            font-size: 12px;
+            left: -15px;
+        }
+    }
+}
+
+/*---------------------------------    dropdowns    -------------------------------*/
+
+.dropdown {
+    display: table;
+    min-width: 115px;
+    position: relative;
+    @include breakpoint(md) {
+        display: none;
+    }
+    &__title {
+        position: relative;
+        cursor: pointer;
+        font-size: 13px;
+        @include breakpoint(md) {
+            font-size: 12px;
+        }
+        a {
+            font-weight: 500;
+            color: $black;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: $blueLight;
+            @include breakpoint(md) {
+                font-size: 12px;
+                left: -15px;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 3px;
+            border-bottom: 1px solid $grayLight;
+            border-right: 1px solid $grayLight;
+            height: 4px;
+            transition: all 0.15s ease-in-out;
+            width: 4px;
+            transform: rotate(45deg);
+        }
+        &_time {
+            &:before {
+                content: '\f57e';
+            }
+        }
+        &_phone {
+            @media(max-width: 1366px){
+                width: 120px;
+            }
+            &:before {
+                content: '\f879';
+            }
+        }
+    }
+    &:hover {
+        .dropdown__title {
+            &:after {
+                transform: rotate(-135deg);
+                top: 5px;
+            }
+        }
+    }
+    &__wrap {
+        position: relative;
+        display: block;
+        &:hover {
+            .dropdown__list {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+    }
+    &__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: #fff;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+        width: 135px;
+        padding: 5px 0 5px 20px;
+        left: -20px;
+        transition: all 0.5s ease-in-out;
+        transform: scale(0);
+    }
+    &__item {
+        cursor: pointer;
+        display: block;
+        font-weight: 300;
+        line-height: 2;
+        font-size: 13px;
+        color: $black;
+        a {
+            font-weight: 500;
+            color: $black;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+/*---------------------------------    nav list    -------------------------------*/
+
+.nav {
+    transform: scale(0);
+    top: -100px;
+    display: none;
+    transition: all 1s ease;
+    @media(max-width: 760px){
+        display: block;
+        transform: scale(1);
+    }
+    @media(max-width: 600px){
+        width: 100%;
+        position: absolute;
+        top: -500px;
+        left: 0;
+        text-align: center;
+        background: #fff;
+    }
+    &.opened{
+        top: 38px;
+    }
+    &.scrolled {
+        transform: scale(1);
+        top: 0;
+        display: block;
+        transition: all 1s ease;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-evenly;
+        @include breakpoint(lg) {
+            transform: translateX(25px);
+        }
+        @include breakpoint(md) {
+            transform: translateX(0);
+        }
+        @include breakpoint(md) {
+            transform: translateX(10px);
+        }
+        @media(max-width: 600px){
+            transform: translateX(0);
+            flex-direction: column;
+        }
+        li {
+            padding: 0 20px;
+            position: relative;
+            @include breakpoint(llg) {
+                 padding: 0 10px;
+            }
+            @include breakpoint(md) {
+                font-size: 12px;
+            }
+            @media(max-width: 600px){
+                padding: 10px 0;
+            }
+            &:after {
+                content: '';
+                width: 2px;
+                height: 2px;
+                border-radius: 100%;
+                background: $blueLight;
+                right: 0;
+                position: absolute;
+                top: 50%;
+                @media(max-width: 600px){
+                    display: none;
+                }
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

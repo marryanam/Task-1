@@ -1,0 +1,124 @@
+/*---------------------------------    btn  without border   -------------------------------*/
+.btn {
+    width: 260px;
+    height: 55px;
+    border-radius: 27px;
+    box-shadow: 0px 5px 25px 0 rgba(255,128,170,0.4);
+    background: linear-gradient(to bottom,#ff99bb,#ff80aa);
+    font-weight: 600;
+    line-height: 2.43;
+    letter-spacing: 0.7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 45px;
+    position: relative;
+    z-index: 3;
+    @include breakpoint(md) {
+        width: 220px;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: -3%;
+        border: 1px solid $pink;
+        transition: all 0.5s ease;
+        width: 105%;
+        height: 65px;
+        opacity: 0.2;
+        border-radius: 32px;
+        transition: all 0.5s ease;
+    }
+    &:hover {
+        &:after {
+            opacity: 0.5;
+        }
+    }
+    span {
+        width: 90%;
+        text-align: center;
+        position: relative;
+        border-radius: 27px;
+        box-shadow: 0px 5px 25px 0 rgba(255,128,170,0.4);
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: linear-gradient(to left,rgba(255,145,182,0),#fc9bbb);
+            width: 30px;
+            height: 100%;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            background: linear-gradient(to left,#fc9bbb,rgba(255,145,182,0));
+            width: 30px;
+            height: 100%;
+        }
+    }
+}
+
+/*---------------------------------    menu btn    -------------------------------*/
+
+.header__i{
+    position: absolute;
+    width: 30px;
+    right: 20px;
+    z-index: 2;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+    transition:all 1s ease;
+    &.active{
+        transform: translateY(10px);
+        span:nth-child(1){
+            transform: rotate(45deg);
+        }
+        span:nth-child(2){
+           opacity: 0;
+        }
+        span:nth-child(3){
+            transform: rotate(-45deg) translate(9px, -10px);
+        }
+    }
+    @media(max-width: 600px){
+        display: block;
+    }
+    span{
+        width: 30px;
+        height: 1px;
+        position: relative;
+        background: $blue;
+        margin: 6px 0;
+        display: block;
+    }
+}
+
+/*---------------------------------    btn 2    -------------------------------*/
+
+.btn-2 {
+    font-weight: 300;
+    line-height: 1.43;
+    color: $blueLight;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $bluePink;
+    }
+    &:hover {
+        opacity: 0.6;
+    }
+}

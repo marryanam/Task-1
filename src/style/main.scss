@@ -1,0 +1,21 @@
+
+/*---------------------------------    parts    -------------------------------*/
+@import "parts/_style_reset";
+@import "parts/_fonts";
+@import "parts/_variables";
+@import "parts/_swiper";
+@import "parts/_titles";
+@import "parts/_header";
+@import "parts/_footer";
+@import "parts/_buttons";
+@import "parts/_popup";
+
+
+/*---------------------------------    pages    -------------------------------*/
+
+// front-page
+@import "pages/front_page/main_slider";
+@import "pages/front_page/services";
+@import "pages/front_page/tabs";
+@import "pages/front_page/animation";
+

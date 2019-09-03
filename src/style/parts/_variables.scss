@@ -1,0 +1,151 @@
+
+/*---------------------------------    colors    -------------------------------*/
+
+$white: linear-gradient(to right,#ff99bb,#ff99bb);
+$whitBlue: #e3f3fc;
+$pink: #ff99bb;
+$green: #a1e65c;
+$pinkGradient: linear-gradient(to bottom,#ff99bb,#ff80aa);
+$blueSky: #e3f3fc;
+$bluePink: linear-gradient(to right,#f9b,rgba(102,191,255,.5) 50%,rgba(102,191,255,0));
+$blueLight: #66bfff;
+$blue: #45a3e5;
+$grayLight: #959fa6;
+$gray: #3e4e59;
+$black: #131e26;
+
+/*---------------------------------    media    -------------------------------*/
+$break-xl: 1650px;
+$break-lg: 1450px;
+$break-llg: 1200px;
+$break-md: 1024px;
+$break-mmd: 991px;
+$break-mmdd: 850px;
+$break-sm: 768px;
+$break-ssm: 576px;
+$break-xs: 425px;
+$break-xxs: 375px;
+
+/*---------------------------------    breakpoint    -------------------------------*/
+
+@mixin breakpoint($point) {
+    @if $point == xl {
+        @media only screen and (max-width:$break-xl) {
+            @content;
+        }
+    }
+    @else if $point == lg {
+        @media only screen and (max-width:$break-lg) {
+            @content;
+        }
+    }
+    @else if $point == llg {
+        @media only screen and (max-width:$break-llg) {
+            @content;
+        }
+    }
+    @else if $point == md {
+        @media only screen and (max-width:$break-md) {
+            @content;
+        }
+    }
+    @else if $point == mmdd {
+        @media only screen and (max-width:$break-md) {
+            @content;
+        }
+    }
+    @else if $point == mmd {
+        @media only screen and (max-width:$break-mmd) {
+            @content;
+        }
+    }
+    @else if $point == sm {
+        @media only screen and (max-width:$break-sm) {
+            @content;
+        }
+    }
+    @else if $point == ssm {
+        @media only screen and (max-width:$break-sm) {
+            @content;
+        }
+    }
+    @else if $point == xs {
+        @media only screen and (max-width:$break-xs) {
+            @content;
+        }
+    }
+    @else if $point == xxs {
+        @media only screen and (max-width:$break-xxs) {
+            @content;
+        }
+    }
+}
+
+/*---------------------------------    container size    -------------------------------*/
+.container {
+    padding: 0 15px;
+    max-width: 1370px;
+    margin: 0 auto;
+    width: 100%;
+    @include breakpoint(lg) {
+        max-width: 1150px;
+    }
+    @include breakpoint(llg) {
+        max-width: 1050px;
+    }
+    @include breakpoint(md) {
+        max-width: 850px;
+    }
+    @include breakpoint(mmdd) {
+        max-width: 720px;
+    }
+    @media(max-width:768px) {
+        max-width: 640px;
+    }
+    @media(max-width:500px) {
+        max-width: calc(100% - 30px);
+    }
+}
+
+/*---------------------------------    placeholder style    -------------------------------*/
+
+::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2.43;
+    color: $grayLight;
+}
+::-moz-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2.43;
+    color: $grayLight;
+}
+:-ms-input-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2.43;
+    color: $grayLight;
+}
+:-moz-placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2.43;
+    color: $grayLight;
+}
+
+/*---------------------------------    scrollbar    -------------------------------*/
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 10px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(230,230,230);
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $blueLight;
+    cursor: pointer;
+}

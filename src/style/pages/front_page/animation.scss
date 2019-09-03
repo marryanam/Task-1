@@ -1,0 +1,184 @@
+
+/*---------------------------------    title dots   -------------------------------*/
+.dots {
+    position: relative;
+    width: 4px;
+    height: 4px;
+    background-color: #ffd073;
+    border-radius: 100%;
+    margin: 0 30px;
+    display: inline-block;
+    &:before {
+        content: '';
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        width: 4px;
+        height: 4px;
+        background-color: #ace673;
+    }
+    &:after {
+        content: '';
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 4px;
+        height: 4px;
+        background-color: #ff99bb;
+    }
+}
+
+/*---------------------------------    circles   -------------------------------*/
+
+.circle {
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 0 0 50px 0 rgba(102,191,255,0.2);
+    z-index: 1;
+}
+.circle_1 {
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 440px;
+    &:after {
+        content: '';
+        background-image: url(../img/2_5.png);
+        position: absolute;
+        width: 40px;
+        height: 50px;
+        bottom: -100%;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include breakpoint(lg) {
+            bottom: -20%;
+        }
+        @include breakpoint(md) {
+            bottom: 30%;
+        }
+    }
+}
+.circle_2 {
+    top: 120px;
+    left: 80px;
+    width: 70px;
+    height: 70px;
+    transform: scale(0);
+}
+.circle_3 {
+    width: 100px;
+    height: 100px;
+    right: 150px;
+    top: 50%;
+    &:after {
+        content: '';
+        background-image: url(../img/1_10.png);
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include breakpoint(mmd) {
+            bottom: -50%;
+        }
+        @include breakpoint(xs) {
+            display: none;
+        }
+    }
+}
+.circle_4 {
+    width: 250px;
+    height: 250px;
+    bottom: 0;
+    left: 0;
+    transform: translate(-100px,-50px);
+    box-shadow: 0 0 50px -20px rgba(102,191,255,0.2);
+    &:after {
+        content: '';
+        background-image: url(../img/2_6.png);
+        position: absolute;
+        width: 55px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include breakpoint(md) {
+            top: 80%;
+        }
+    }
+}
+.circle_5 {
+    width: 300px;
+    height: 300px;
+    top: 0;
+    right: 0;
+    transform: translate(100px,-50px) scale(0);
+    @include breakpoint(xl) {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/*---------------------------------    rose leaf   -------------------------------*/
+.rose {
+    position: absolute;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+.rose_1 {
+    background-image: url(../img/45.png);
+    top: 30%;
+    left: 275px;
+}
+.rose_2 {
+    background-image: url(../img/1_11.png);
+    bottom: 120px;
+    left: 130px;
+}
+.rose_3 {
+    background-image: url(../img/233.png);
+    top: 70%;
+    right: 150px;
+}
+.rose_4 {
+    background-image: url(../img/544.png);
+    top: 40%;
+    left: 0;
+}
+.rose_5 {
+    background-image: url(../img/46.png);
+    bottom: 200px;
+    left: 170px;
+}
+.rose_6 {
+    background-image: url(../img/456.png);
+    bottom: 300px;
+    left: 35%;
+}
+.rose_7 {
+    background-image: url(../img/32443.png);
+    bottom: 250px;
+    right: 35%;
+}
+.rose_8 {
+    background-image: url(../img/3454.png);
+    top: 30%;
+    right: 220px;
+}
+.leaf {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    background: url(../img/233.png);
+    background-size: 100% 100%;
+    z-index: -1;
+}
